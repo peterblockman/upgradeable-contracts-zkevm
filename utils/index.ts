@@ -35,3 +35,32 @@ export const getWallet = (privateKey?: string) => {
 
   return wallet;
 };
+
+export const verifyEnoughBalance = async (wallet: Wallet, amount: bigint) => {
+  // Check if the wallet has enough balance
+  const balance = await wallet.getBalance();
+  if (balance < amount)
+    throw `⛔️ Wallet balance is too low! Required ${ethers.formatEther(
+      amount
+    )} ETH, but current ${wallet.address} balance is ${ethers.formatEther(
+      balance
+    )} ETH`;
+
+  console.log(`Wallet has enough balance: ${ethers.formatEther(balance)} ETH`);
+};
+
+/**
+ * @param {string} data.contract The contract's path and name. E.g., "contracts/Greeter.sol:Greeter"
+ */
+export const verifyContract = async (data: {
+  address: string;
+  contract: string;
+  constructorArguments: string;
+  bytecode: string;
+}) => {
+  const verificationRequestId: number = await hre.run("verify:verify", {
+    ...data,
+    noCompile: true,
+  });
+  return verificationRequestId;
+};

@@ -1,0 +1,70 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0x7a38a0fAC4D11947F884fe4B439c03Ead3aAe8B5",
+      "txHash": "0x1ef8e140c2fdb278b8b5099f24bf79dfe82042d1369835e00305ea1d97e368bb",
+      "kind": "uups"
+    },
+    {
+      "address": "0xED4740E90386bE5dfe95926637Fb0D2eE31237BB",
+      "txHash": "0xb931725cf4539d084232069a4e2200158662f6151606bb745c806bfa3fb331db",
+      "kind": "uups"
+    }
+  ],
+  "impls": {
+    "f0f6834338ebeebaf6420d744415c91a8366af03f842daab33b42c1cc34c1818": {
+      "address": "0x5fa2262676C297Ff0F199B941e3E618A6a562B67",
+      "txHash": "0x54986528ad06c0d759dbdb084d2aae24fce350c94d9975b366e7d7247bc1fdb1",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "contract": "MyUpgradeableContract",
+            "label": "number",
+            "type": "t_uint256",
+            "src": "contracts/MyUpgradeableContract.sol:11"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_uint64": {
+            "label": "uint64"
+          },
+          "t_bool": {
+            "label": "bool"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
