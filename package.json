@@ -4,7 +4,7 @@
     "description": "The goal of this repository is to demonstrate basic use of the Tethys release of the Cronos zkEVM testnet network (as of May 2024).",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "compile": "hardhat compile"
     },
     "author": "",
     "license": "MIT",
@@ -17,8 +17,8 @@
         "@matterlabs/hardhat-zksync": "^1.1.0",
         "@matterlabs/hardhat-zksync-verify": "^1.6.0",
         "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-        "@openzeppelin/contracts": "^4.9.5",
-        "@openzeppelin/contracts-upgradeable": "^4.9.5",
+        "@openzeppelin/contracts": "5.2.0",
+        "@openzeppelin/contracts-upgradeable": "5.2.0",
         "hardhat": "^2.22.4"
     }
 }
